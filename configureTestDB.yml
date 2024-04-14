@@ -1,0 +1,9 @@
+port: "8081"
+is_debug: true
+
+storage:
+  username: test_user
+  password: test_password
+  host: localhost
+  port: 5433
+  dbname: test_db
