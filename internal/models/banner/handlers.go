@@ -103,37 +103,6 @@ func handleErrors(err error, logger *logging.Logger, w http.ResponseWriter) {
 	}
 }
 
-//func checkIfAdmin(r *http.Request) (bool, error) {
-//	// Получаем куку с именем "token" из запроса
-//	cookie, err := r.Cookie("token")
-//	if err != nil {
-//		return false, errors.New("missing token cookie")
-//	}
-//
-//	var claims user.CustomClaims
-//
-//	tokenString, err := url.QueryUnescape(cookie.Value)
-//	if err != nil {
-//		return false, errors.New("invalid token")
-//	}
-//
-//	token, err := jwt.ParseWithClaims(tokenString, &claims, func(token *jwt.Token) (interface{}, error) {
-//		return []byte("mysecretkey"), nil
-//	})
-//	if err != nil {
-//		if err == jwt.ErrSignatureInvalid {
-//			return false, errors.New("invalid token signature")
-//		}
-//		return false, err
-//	}
-//
-//	if !token.Valid {
-//		return false, errors.New("token expired")
-//	}
-//
-//	return claims.IsAdmin, nil
-//}
-
 func (h *Handler) GetBannerFilter(w http.ResponseWriter, r *http.Request) {
 	tagIDStr := chi.URLParam(r, "tag_id")
 	featureIDStr := chi.URLParam(r, "feature_id")

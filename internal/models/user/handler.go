@@ -124,7 +124,7 @@ func (h *Handler) Login(w http.ResponseWriter, r *http.Request) {
 		HttpOnly: true,
 		Secure:   false, // Установите этот флаг в true, если ваш сайт использует HTTPS
 		Path:     "/",
-		MaxAge:   24 * 60 * 60, // Срок действия куки (24 час)
+		MaxAge:   24 * 60 * 60, // Срок действия куки (24 часа)
 	}
 
 	http.SetCookie(w, cookie)
