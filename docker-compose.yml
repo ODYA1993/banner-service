@@ -10,8 +10,8 @@ services:
       POSTGRES_DB: dbbanner
     volumes:
       - ./data:/var/lib/postgresql/data
-      - ./creating_tablesDB.sql:/docker-entrypoint-initdb.d/creating_tablesDB.sql
-      - ./inserting_data_into_tables.sql:/docker-entrypoint-initdb.d/inserting_data_into_tables.sql
+      - ./migrations/creating_tablesDB.sql:/docker-entrypoint-initdb.d/creating_tablesDB.sql
+      - ./migrations/inserting_data_into_tables.sql:/docker-entrypoint-initdb.d/inserting_data_into_tables.sql
     ports:
       - "5432:5432"
     networks:
@@ -26,8 +26,8 @@ services:
       POSTGRES_DB: test_db
     volumes:
       - ./test_data:/var/lib/postgresql/data
-      - ./creating_tablesDB.sql:/docker-entrypoint-initdb.d/creating_tablesDB.sql
-      - ./inserting_data_into_tables.sql:/docker-entrypoint-initdb.d/inserting_data_into_tables.sql
+      - ./migrations/creating_tablesDB.sql:/docker-entrypoint-initdb.d/creating_tablesDB.sql
+      - ./migrations/inserting_data_into_tables.sql:/docker-entrypoint-initdb.d/inserting_data_into_tables.sql
     ports:
       - "5433:5432"
     networks:
